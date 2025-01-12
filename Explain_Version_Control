@@ -1,0 +1,16 @@
+What is Version Control?
+
+Explain the meaning of Version Control
+Highlight a benefit of Version Control
+Example of version control: Describe the way version control might be used on a software development team.
+Show a command used in Version Control (for example a Git command)
+Thoroughly explain these concepts 
+
+
+
+
+Version control help us track the changes we make to our projects as we work on them. It help us review the process of our projects and the changes we make as we continue to work on them, adding comments to remember why and when we did those changes or additions.
+
+When pushing our projects to a repo, we can see all of our work in a timeline sequense. making it easier to go back in case we need to change something. For example, if I'm working on a software project with a group of developers, each of us will have access to a copy of the project while working on our own. That way it will help us be more organized. With transparent updates, notes and info needed to work on the project.
+
+ When working on a project there are different commands we can use to add, delete, commit, pull & push using the terminal in VS code. For example, when you are ready to save your work and send it to your repo. First, you will add all your changes using the; git add or git add . , to stage the changes. Then you need to commit those changes using the; git commit -m "", where you will type a small message expaling the changes or additions that you are making to your project. The next step would be pushing your work with the; git push command or use source control option available on the left side of the VS code app.

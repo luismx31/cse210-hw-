@@ -19,11 +19,18 @@ class Program
         job2._startYear = 1999;
         job2._endYear = 2024;
 
+          Job job3 = new Job();
+        job2._jobTitle = "Software D.";
+        job2._company = "Google";
+        job2._startYear = 2001;
+        job2._endYear = 2025;
+
         Resume myResume = new Resume();
         myResume._name = "Allison Rose";
 
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
+        myResume._jobs.Add(job3);
 
         myResume.Display();
 

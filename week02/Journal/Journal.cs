@@ -1,55 +1,63 @@
 using System;
-
+using System.Globalization;
 using System.IO;
 using Microsoft.VisualBasic;
 
 public class Journal
 {
-   public List<Entry> _entries;
-
-   public void AddEntry(Entry newEntry)
-   { 
-    List<Entry>AddEntry = new List<Entry>();
-    string filename = "myFile.txt";
+   private List<Entry> _entries = new List<Entry>();
     
 
+    //new entry
+   public void AddEntry(Entry newEntry)
+   {
+       _entries.Add(newEntry);
    }
+   
+    //display entries
    public void DisplayAll()
    {
+       if (_entries.Count == 0)
+       {
+           Console.WriteLine("No journal entries to display.");
+           return;
+       }
 
+       foreach (Entry entry in _entries)
+       {
+           entry.Display();
+       }
    }
 
    public void SaveToFile(string file)
    {
-    Console.WriteLine("Saving to file...");
-    string filename = "myFile.txt";
-
-    using (StreamWriter outputFile = new StreamWriter(filename))
-{
-    // You can add text to the file with the WriteLine method
-    outputFile.WriteLine("This will be the first line in the file.");
-    
-    // You can use the $ and include variables just like with Console.WriteLine
-    string color = "Blue";
-    outputFile.WriteLine($"My favorite color is {color}");
-}
-
+       using (StreamWriter writer = new StreamWriter(file))
+       {
+           foreach (Entry entry in _entries)
+           {
+               writer.WriteLine($"{entry._date},{entry._promptText},{entry._entryText}");
+           }
+       }
    }
 
    public void LoadFromFile(string file)
    {
-    string filename = "myFile.txt";
-
-//string[] lines = System.IO.File.ReadAllLines(filename);
-//foreach (string line in lines)
-//{
-   // string[] parts = line.Split(",");
-
-   // string firstName = parts[0];
-   // string lastName = parts[1];
-//}
+       if (File.Exists(file))
+       {
+           _entries.Clear();
+           string[] lines = File.ReadAllLines(file);
+           foreach (var line in lines)
+           {
+               string[] parts = line.Split('|');
+               if (parts.Length == 3)
+               {
+                   _entries.Add(new Entry(parts[0], parts[1], parts[2]));
+               }
+           }
+       }
+       else
+       {
+           Console.WriteLine("File not found.");
+       }
    }
-
-
-    
 }

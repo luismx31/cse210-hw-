@@ -1,14 +1,23 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.IO;
 
 public class Entry
 {
-    public string _date;
-    public string _prompText;
-    public string _entryText;
+   public string _date;
+   public string _promptText; 
+   public string _entryText;
+   public Entry(string date, string promptText, string entryText)
+   {
+       _date = date;
+       _promptText = promptText;
+       _entryText = entryText;
+   }
 
-    public void Display()
-    {
-        Console.WriteLine($"{_date} {_prompText} {_entryText}.");
-    }   
+   public void Display()
+   {
+       Console.WriteLine($"Date: {_date}");
+       Console.WriteLine($"Prompt: {_promptText}");
+       Console.WriteLine($"Entry: {_entryText}");
+       Console.WriteLine();
+   }
 }

@@ -7,7 +7,8 @@ Console.WriteLine(userResponse);
 
 int x = int.Parse(userResponse);
 
-string letter = "";
+string letter = ""; 
+         
 
 
         if (x >= 90)

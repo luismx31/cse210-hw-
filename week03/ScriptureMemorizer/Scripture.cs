@@ -17,6 +17,7 @@ public class Scripture
    }
 
    public void HideRandomWords(int numberToHide)
+   
    {
        Random random = new Random();
        int hiddenCount = -1;

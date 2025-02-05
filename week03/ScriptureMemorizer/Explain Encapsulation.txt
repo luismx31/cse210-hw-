@@ -1,0 +1,46 @@
+Explain Encapsulation
+
+
+What is encapsulation and why is it important?
+
+
+Encapsulation means to enclose something. In this case, when we use encapsulation
+ in a program we are hiding information of a class from another. The responsabilities
+of a class will stay encapsulated so it can contain all the information in it.
+The benefit of encapsulation is that we do not need to have full access to a class to get data. 
+Insted we can use methods to access it as necessary. Using encapsulation will let us hide important
+information and can have more control to internal data.
+
+When we use a Private class, it will only be accesssable by methods in the class that contains them.
+For example, int our Scripture memorizer  project we have a public class Scripture with two private varialbles;
+private Reference & private List. In order for us to have access to any of these two variables we will need to create a method.
+
+
+public class Scripture
+{
+   private Reference _reference;
+   private List<Word> _words;
+
+   public Scripture(Reference reference, string text)
+   {
+       _reference = reference;
+       _words = new List<Word>();
+       foreach (string word in text.Split(' '))
+       {
+           _words.Add(new Word(word));
+       }
+   }
+
+}
+
+In this example we can see that the class Scripture has private information that
+does not want to be access directly from another class. Instead, it has a constructor public scripture method.
+This way we can can call this public method from another class and we will have
+access to its data, in this case a new reference.
+
+
+
+
+
+
+

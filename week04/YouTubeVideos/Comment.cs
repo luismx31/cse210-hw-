@@ -17,15 +17,5 @@ public class Comment
 
     }
 
-    public string getName()
-    {
-        return _name;
-
-    }
-
-    public string getText()
-    {
-        return _text;
-    }
 
 }
